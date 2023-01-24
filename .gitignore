@@ -30,8 +30,8 @@ IlluminatedCloud
 sfdx-source/untracked/*
 !sfdx-source/untracked/README.md
 .forceignore
-force-app/main/default
-default
+# force-app/main/default
+# default
 
 # SFDX SFDMU Plugin Related
 /data/**/logs/

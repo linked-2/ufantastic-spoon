@@ -1,0 +1,38 @@
+<template>
+    <lightning-card tite="data binding section">
+        <h1>{str}</h1>
+        <h1>{obj.name}</h1>
+        <h1>{obj.height}</h1>
+        <p>Status of bool: {bool}</p>
+        <lightning-input type="text" onchange={changeHandler}> </lightning-input>
+        <template if:true={conditional}>
+            <h1>The thing is truthy!</h1>
+        </template>
+    </lightning-card>
+    <lightning-card title="iteration">
+            <template for:each={players} for:item="player" for:index="index">
+                <h1 key={player.name}>{index} - {player.name}</h1>
+                <h1 key={player.name}>Age: {player.age}</h1>
+                <h1 key={player.name}>Height: {player.height}</h1>
+            </template> </br>
+            <template iterator:player={players}>
+                <h1 key={player.value.name}>{index} - {player.value.name}</h1>
+                <h1 key={player.value.name}>Age: {player.value.age}</h1>
+                <h1 key={player.value.name}>Height: {player.value.height}</h1>
+                <template if:true={player.last}>There aren't anymore!</template>
+            </template>
+    </lightning-card>
+    <lightning-card title="Child Component">
+        <c-hello-world target="World"></c-hello-world>
+    </lightning-card>
+    <lightning-card title="getters">
+        {addition} </br>
+        {firstPlayerName}
+    </lightning-card>
+    <lightning-card title="setters">
+        <c-mksetter-child item="Hello"></c-mksetter-child>
+    </lightning-card>
+    <lightning-card title="setters">
+        <c-setter-child item="hello"></c-setter-child>
+    </lightning-card>
+</template>
